@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { User } from './user/user';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'form-group-app';
+  userForm;
+constructor(private fb:FormBuilder){
+this.userForm= this.fb.group({
+  name:[null, Validators.required],
+  password:[null, [Validators.required, Validators.min(6)]]
+});
+}
+
+  onSubmit(){
+    console.log(this.userForm);
+  }
 }
