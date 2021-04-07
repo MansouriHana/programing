@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { User } from './user/user';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,7 @@ export class AppComponent {
 constructor(private fb:FormBuilder){
 this.userForm= this.fb.group({
   name:[null, Validators.required],
-  password:[null, [Validators.required, Validators.min(6)]]
+  password:[null, [Validators.required, Validators.minLength(6)]]
 });
 }
 
