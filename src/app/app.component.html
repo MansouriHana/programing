@@ -10,7 +10,7 @@
             </div>
         </div>
         <br>
-        <div class="user-passw">
+        <div class="user-password">
             <input type="password" name="userPassword" formControlName="password" minlength="6" placeholder="enyter user password">
             <div *ngIf="userForm.get('password').invalid &&
                         (userForm.get('password').dirty || userForm.get('password').touched)">
